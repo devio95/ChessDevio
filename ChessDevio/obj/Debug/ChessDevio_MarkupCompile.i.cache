@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\App.xaml
-3-1520733306
+3-614018836
 
-81495159830
+8-279522500
 13-1505183044
-Controlers\ChessBoardControl.xaml;Controlers\StartControl.xaml;MainWindow.xaml;
+UserControls\ChessBoardControl.xaml;UserControls\StartControl.xaml;MainWindow.xaml;
 
-True
+False
 

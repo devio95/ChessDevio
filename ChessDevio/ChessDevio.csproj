@@ -55,11 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controlers\ChessBoardControl.xaml">
+    <Page Include="UserControls\ChessBoardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controlers\StartControl.xaml">
+    <Page Include="UserControls\StartControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,10 +71,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controlers\ChessBoardControl.xaml.cs">
+    <Compile Include="UserControls\ChessBoardControl.xaml.cs">
       <DependentUpon>ChessBoardControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controlers\StartControl.xaml.cs">
+    <Compile Include="UserControls\StartControl.xaml.cs">
       <DependentUpon>StartControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -112,7 +112,8 @@
     <Resource Include="Images\Knight.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Knight.png" />
+    <Folder Include="Controler\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

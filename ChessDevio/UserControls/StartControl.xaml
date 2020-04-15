@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Button x:Name="btnStart" Content="Start" Height="117" Background="#FF7BBB70" Margin="20,0"/>
-            <StackPanel Height="100"/>
-        </StackPanel>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="58*"/>
+        </Grid.RowDefinitions>
+        <Button  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Content="Start" Margin="10"/>
     </Grid>
 </UserControl>

@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessDevio"
         mc:Ignorable="d"
-        Title="Chess Devio" Height="450" Width="908" Icon="Knight.png">
-    <Grid x:Name="gMain" HorizontalAlignment="Right" Width="900">
+        Title="Chess Devio" Height="450" Width="908" Icon="Images\Knight.png">
+    <Grid x:Name="gMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="338*"/>
             <RowDefinition Height="81*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="743*"/>
+                <ColumnDefinition Width="397*"/>
+                <ColumnDefinition Width="346*"/>
                 <ColumnDefinition Width="157*"/>
             </Grid.ColumnDefinitions>
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Chess by devio - 2020" Grid.Column="1"/>
-            <Image HorizontalAlignment="Right" Source="Images/Knight.png"/>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Chess by devio - 2020" Grid.Column="2"/>
+            <Image HorizontalAlignment="Right" Source="Images/Knight.png" Grid.Column="1"/>
+            <Image HorizontalAlignment="Left" Source="Images/Knight.png" Grid.Column="0"/>
         </Grid>
-        <StackPanel x:Name="spMain" Grid.Row="0"/>
+        <DockPanel x:Name="dpMain" Grid.Row="0" Margin="0,-10,0,10"/>
     </Grid>
 </Window>

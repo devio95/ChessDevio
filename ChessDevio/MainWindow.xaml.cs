@@ -28,8 +28,8 @@ namespace ChessDevio
         }
         public void SetPanel(UserControl control)
         {
-            spMain.Children.Clear();
-            spMain.Children.Add(control);
+           dpMain.Children.Clear();
+           dpMain.Children.Add(control);
         }
         private void SetStartControl()
         {
