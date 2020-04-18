@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessDevio"
         mc:Ignorable="d"
-        Title="Chess Devio" Height="450" Width="908" Icon="Images\Knight.png">
+        ResizeMode="NoResize"
+        Title="Chess Devio" Height="1000" Width="1000" Icon="Images\Knight.png">
     <Grid x:Name="gMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="338*"/>
@@ -21,6 +22,6 @@
             <Image HorizontalAlignment="Right" Source="Images/Knight.png" Grid.Column="1"/>
             <Image HorizontalAlignment="Left" Source="Images/Knight.png" Grid.Column="0"/>
         </Grid>
-        <DockPanel x:Name="dpMain" Grid.Row="0" Margin="0,-10,0,10"/>
+        <DockPanel x:Name="dpMain" Grid.Row="0" Margin="10"/>
     </Grid>
 </Window>

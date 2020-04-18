@@ -2,12 +2,10 @@ C:\Users\Devio\source\repos\ChessDevio\ChessDevio\bin\Debug\ChessDevio.exe.confi
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\bin\Debug\ChessDevio.exe
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\bin\Debug\ChessDevio.pdb
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.csprojAssemblyReference.cache
-C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\Controlers\ChessBoardControl.g.cs
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\MainWindow.g.cs
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\App.g.cs
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio_MarkupCompile.cache
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio_MarkupCompile.lref
-C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\Controlers\ChessBoardControl.baml
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\MainWindow.baml
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.g.resources
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.Properties.Resources.resources
@@ -15,5 +13,7 @@ C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.csproj.Ge
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.csproj.CoreCompileInputs.cache
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.exe
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\ChessDevio.pdb
-C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\Controlers\StartControl.g.cs
-C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\Controlers\StartControl.baml
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\ChessBoardControl.g.cs
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\StartControl.g.cs
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\ChessBoardControl.baml
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\StartControl.baml

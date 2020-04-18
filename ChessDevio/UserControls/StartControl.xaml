@@ -11,6 +11,6 @@
             <RowDefinition Height="17*"/>
             <RowDefinition Height="58*"/>
         </Grid.RowDefinitions>
-        <Button  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Content="Start" Margin="10"/>
+        <Button x:Name="btnStart"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Content="Start" Margin="10" Click="Button_Click"/>
     </Grid>
 </UserControl>

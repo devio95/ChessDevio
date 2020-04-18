@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessDevio.Controler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace ChessDevio.Controlers
         public StartControl()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ChessBoardControl cbc = new ChessBoardControl();
+            Controller.SetControl(cbc);
         }
     }
 }
