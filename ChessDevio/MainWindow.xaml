@@ -6,21 +6,19 @@
         xmlns:local="clr-namespace:ChessDevio"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Chess Devio" Height="1000" Width="1000" Icon="Images\Knight.png">
+        Title="Chess Devio" Height="982" Width="1000" Icon="Images\Knight.png">
     <Grid x:Name="gMain">
         <Grid.RowDefinitions>
-            <RowDefinition Height="338*"/>
-            <RowDefinition Height="81*"/>
+            <RowDefinition Height="1210*"/>
+            <RowDefinition Height="63*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="397*"/>
-                <ColumnDefinition Width="346*"/>
-                <ColumnDefinition Width="157*"/>
+                <ColumnDefinition Width="821*"/>
+                <ColumnDefinition Width="173*"/>
             </Grid.ColumnDefinitions>
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Chess by devio - 2020" Grid.Column="2"/>
-            <Image HorizontalAlignment="Right" Source="Images/Knight.png" Grid.Column="1"/>
-            <Image HorizontalAlignment="Left" Source="Images/Knight.png" Grid.Column="0"/>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Chess by devio - 2020" Grid.Column="1"/>
+            <Image HorizontalAlignment="Right" Source="Images/Knight.png"/>
         </Grid>
         <DockPanel x:Name="dpMain" Grid.Row="0" Margin="10"/>
     </Grid>

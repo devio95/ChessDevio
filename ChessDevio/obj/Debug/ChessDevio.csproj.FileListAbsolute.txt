@@ -17,3 +17,6 @@ C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\ChessBo
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\StartControl.g.cs
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\ChessBoardControl.baml
 C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\StartControl.baml
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\GameControl.g.cs
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Devio\source\repos\ChessDevio\ChessDevio\obj\Debug\UserControls\GameControl.baml

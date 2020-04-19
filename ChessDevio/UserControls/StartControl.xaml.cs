@@ -1,4 +1,5 @@
 ﻿using ChessDevio.Controler;
+using ChessDevio.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,8 @@ namespace ChessDevio.Controlers
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ChessBoardControl cbc = new ChessBoardControl();
-            Controller.SetControl(cbc);
+            GameControl gc = new GameControl();
+            Controller.SetControl(gc);
         }
     }
 }
