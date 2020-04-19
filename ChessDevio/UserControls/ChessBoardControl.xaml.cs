@@ -37,14 +37,14 @@ namespace ChessDevio.Controlers
             GenerateBoard();
             foreach (Piece p in blackPieces)
             {
-                string color = (p.Position.x + p.Position.y) % 2 == 0 ? "White" : "Black";
-                Images.Find(x => x.Position.Equals(p.Position)).Img.Source = new BitmapImage(new Uri($"{p.ImagePath}{color}.png"));
+                BitmapSource src = new BitmapImage(new Uri($"{p.ImagePath}.png"));
+                Images.Find(x => x.Position.Equals(p.Position)).Img.Source = src;
                 Uri source = new Uri(p.ImagePath);
             }
             foreach (Piece p in whitePieces)
             {
-                string color = (p.Position.x + p.Position.y) % 2 == 0 ? "White" : "Black";
-                Images.Find(x => x.Position.Equals(p.Position)).Img.Source = new BitmapImage(new Uri($"{p.ImagePath}{color}.png"));
+                BitmapSource src = new BitmapImage(new Uri($"{p.ImagePath}.png"));
+                Images.Find(x => x.Position.Equals(p.Position)).Img.Source = src;
                 Uri source = new Uri(p.ImagePath);
             }
         }
@@ -63,49 +63,52 @@ namespace ChessDevio.Controlers
         private void GenerateBoard()
         {
             Images.Clear();
-            for (int i = 0; i < 8; i++)
+            BrushConverter bc = new BrushConverter();
+            for (int column = 0; column < 8; column++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int row = 0; row < 8; row++)
                 {
                     Image img = new Image();
-                    if ((i + j) % 2 == 0)
+                    Grid gc = new Grid();
+                    if ((row + column) % 2 == 0)
                     {
-                        Uri source = new Uri(@"pack://application:,,,/ChessDevio;component/images/White.png");
-                        img.Source = new BitmapImage(source);
+                        gc.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
                     }
                     else
                     {
-                        Uri source = new Uri(@"pack://application:,,,/ChessDevio;component/images/Black.png");
-                        img.Source = new BitmapImage(source);
+                        gc.Background = new SolidColorBrush(Color.FromRgb(0, 0, 0));
                     }
-                    Grid.SetRow(img, i);
-                    Grid.SetColumn(img, j);
-                    gcBoard.Children.Add(img);
-                    Images.Add(new ImagePosition(img, new Position(i, j)));
+                    gc.Children.Add(img);
+                    Grid.SetRow(gc, row);
+                    Grid.SetColumn(gc, column);
+                    gcBoard.Children.Add(gc);
+                    Images.Add(new ImagePosition(img, new Position(column, row)));
                 }
             }
-        }
-        public BitmapSource ReplaceTransparency(this BitmapSource bitmap, Color color)
-        {
-            var rect = new Rect(0, 0, bitmap.PixelWidth, bitmap.PixelHeight);
-            var visual = new DrawingVisual();
-            var context = visual.RenderOpen();
-            context.DrawRectangle(new SolidColorBrush(color), null, rect);
-            context.DrawImage(bitmap, rect);
-            context.Close();
-
-            var render = new RenderTargetBitmap(bitmap.PixelWidth, bitmap.PixelHeight,
-                96, 96, PixelFormats.Pbgra32);
-            render.Render(visual);
-            return render;
         }
 
         private void gcBoard_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var element = (UIElement)e.Source;
-            int y = Grid.GetColumn(element);
-            int x = Grid.GetRow(element);
+            UIElement element = (UIElement)e.Source;
+            int x, y;
+            if (element.GetType().Equals(typeof(Grid)))
+            {
+                UIElement gridParent = (UIElement)LogicalTreeHelper.GetParent(element);
+                if (!gridParent.GetType().Equals(typeof(Grid)))
+                {
+                    return;
+                }
+                y = Grid.GetRow(element);
+                x = Grid.GetColumn(element);
+            }
+            else
+            {
+                UIElement el2 = (UIElement)LogicalTreeHelper.GetParent(element);
+                x = Grid.GetColumn(el2);
+                y = Grid.GetRow(el2);
+            }
             Position point = new Position(x, y);
+            System.Diagnostics.Debug.WriteLine($"{x},{y}");
             ChessBoardClicked(this, new ChessBoardClickedEventArgs(point));
         }
     }

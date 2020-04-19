@@ -37,6 +37,7 @@ namespace ChessDevio.UserControls
         {
             ChessBoardClickedEventArgs args = (ChessBoardClickedEventArgs)e;
             Position position = args.Position;
+            // Jeżeli nic nie zaznaczone to wybieramy bierke do zaznaczenia
             if (Dragged == null)
             {
                 if (BlackPieces.Exists(p => p.Position.Equals(position)))
@@ -48,43 +49,57 @@ namespace ChessDevio.UserControls
                     Dragged = WhitePieces.Find(p => p.Position.Equals(position));
                 }
             }
+            // Wykonanie ruchu
             else
             {
-                if (BlackPieces.Exists(p => p.Position.Equals(position)))
+                try
                 {
-                    if (Dragged.Color == BlackPieces.Find(p => p.Position.Equals(position)).Color)
+                    // Sprawdzenie czy mozna wykonac ruch
+                    if (Dragged.Color == PieceColor.White)
                     {
-                        return;
-                    }
-                    BlackPieces.Remove(BlackPieces.Find(p => p.Position.Equals(position)));
-                    WhitePieces.Remove(WhitePieces.Find(p => p.Position.Equals(Dragged.Position)));
-                    Dragged.Position = position;
-                    WhitePieces.Add(Dragged);
-                }
-                else if (WhitePieces.Exists(p => p.Position.Equals(position)))
-                {
-                    if (Dragged.Color == WhitePieces.Find(p => p.Position.Equals(position)).Color)
-                    {
-                        return;
-                    }
-                    BlackPieces.Remove(BlackPieces.Find(p => p.Position.Equals(Dragged.Position)));
-                    WhitePieces.Remove(WhitePieces.Find(p => p.Position.Equals(position)));
-                    Dragged.Position = position;
-                    BlackPieces.Add(Dragged);
-                }
-                else
-                {
-                    if (Dragged.Color == Models.PieceColor.White)
-                    {
-                        WhitePieces.Find(x => x.Position.Equals(Dragged.Position)).Position = position;
+                        if (!Dragged.AllowMove(position, WhitePieces, BlackPieces))
+                        {
+                            return;
+                        }
                     }
                     else
                     {
-                        BlackPieces.Find(x => x.Position.Equals(Dragged.Position)).Position = position;
+                        if (!Dragged.AllowMove(position, BlackPieces, WhitePieces))
+                        {
+                            return;
+                        }
+                    }
+                    if (BlackPieces.Exists(p => p.Position.Equals(position)))
+                    {
+                        BlackPieces.Remove(BlackPieces.Find(p => p.Position.Equals(position)));
+                        WhitePieces.Remove(WhitePieces.Find(p => p.Position.Equals(Dragged.Position)));
+                        Dragged.Position = position;
+                        WhitePieces.Add(Dragged);
+                    }
+                    else if (WhitePieces.Exists(p => p.Position.Equals(position)))
+                    {
+                        BlackPieces.Remove(BlackPieces.Find(p => p.Position.Equals(Dragged.Position)));
+                        WhitePieces.Remove(WhitePieces.Find(p => p.Position.Equals(position)));
+                        Dragged.Position = position;
+                        BlackPieces.Add(Dragged);
+                    }
+                    else
+                    {
+                        if (Dragged.Color == Models.PieceColor.White)
+                        {
+                            WhitePieces.Find(x => x.Position.Equals(Dragged.Position)).Position = position;
+                        }
+                        else
+                        {
+                            BlackPieces.Find(x => x.Position.Equals(Dragged.Position)).Position = position;
+                        }
                     }
                 }
-                ChessBoard.GenerateBoardPieces(WhitePieces, BlackPieces);
-                Dragged = null;
+                finally
+                {
+                    ChessBoard.GenerateBoardPieces(WhitePieces, BlackPieces);
+                    Dragged = null;
+                }
             }
         }
 
@@ -95,34 +110,34 @@ namespace ChessDevio.UserControls
             // White pawns
             for (int i = 0; i < 8; i++)
             {
-                AddPiece(1, i, @"pack://application:,,,/ChessDevio;component/images/Pawn", new Pawn(), true);
+                AddPiece(i, 1, @"pack://application:,,,/ChessDevio;component/images/Pawn", new Pawn(), true);
             }
             // Black pawns
             for (int i = 0; i < 8; i++)
             {
-                AddPiece(6, i, @"pack://application:,,,/ChessDevio;component/images/Pawn", new Pawn(), false);
+                AddPiece(i, 6, @"pack://application:,,,/ChessDevio;component/images/Pawn", new Pawn(), false);
             }
             // Rooks
             AddPiece(0, 0, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), true);
-            AddPiece(0, 7, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), true);
-            AddPiece(7, 0, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), false);
+            AddPiece(7, 0, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), true);
+            AddPiece(0, 7, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), false);
             AddPiece(7, 7, @"pack://application:,,,/ChessDevio;component/images/Rook", new Rook(), false);
             // Knights
-            AddPiece(0, 1, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), true);
-            AddPiece(0, 6, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), true);
-            AddPiece(7, 1, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), false);
-            AddPiece(7, 6, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), false);
+            AddPiece(1, 0, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), true);
+            AddPiece(6, 0, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), true);
+            AddPiece(1, 7, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), false);
+            AddPiece(6, 7, @"pack://application:,,,/ChessDevio;component/images/Knight", new Knight(), false);
             // Bishops
-            AddPiece(0, 2, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), true);
-            AddPiece(0, 5, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), true);
-            AddPiece(7, 2, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), false);
-            AddPiece(7, 5, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), false);
+            AddPiece(2, 0, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), true);
+            AddPiece(5, 0, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), true);
+            AddPiece(2, 7, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), false);
+            AddPiece(5, 7, @"pack://application:,,,/ChessDevio;component/images/Bishop", new Bishop(), false);
             // Queens
-            AddPiece(0, 3, @"pack://application:,,,/ChessDevio;component/images/Queen", new Queen(), true);
-            AddPiece(7, 3, @"pack://application:,,,/ChessDevio;component/images/Queen", new Queen(), false);
+            AddPiece(3, 0, @"pack://application:,,,/ChessDevio;component/images/Queen", new Queen(), true);
+            AddPiece(3, 7, @"pack://application:,,,/ChessDevio;component/images/Queen", new Queen(), false);
             // Kings
-            AddPiece(0, 4, @"pack://application:,,,/ChessDevio;component/images/King", new King(), true);
-            AddPiece(7, 4, @"pack://application:,,,/ChessDevio;component/images/King", new King(), false);
+            AddPiece(4, 0, @"pack://application:,,,/ChessDevio;component/images/King", new King(), true);
+            AddPiece(4, 7, @"pack://application:,,,/ChessDevio;component/images/King", new King(), false);
         }
         private void AddPiece(int x, int y, string path, Piece piece, bool white)
         {

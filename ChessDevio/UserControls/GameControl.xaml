@@ -5,10 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ChessDevio.UserControls"
              xmlns:Controlers="clr-namespace:ChessDevio.Controlers" x:Class="ChessDevio.UserControls.GameControl"
-             mc:Ignorable="d" d:DesignWidth="810" Height="846">
-    <StackPanel>
-        <Controlers:ChessBoardControl x:Name="ChessBoard" Height="800" Width="800" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="tb1" Height="23" TextWrapping="Wrap" Text="TextBox"/>
-        <TextBox x:Name="tb2" Height="23" TextWrapping="Wrap" Text="TextBox"/>
-    </StackPanel>
+             mc:Ignorable="d" Height="861" Width="819">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="51"/>
+        </Grid.RowDefinitions>
+        <Controlers:ChessBoardControl x:Name="ChessBoard" Grid.ColumnSpan="8" Grid.Column="1" HorizontalAlignment="Left" Height="714" Margin="10,10,0,0" Grid.Row="1" Grid.RowSpan="9" VerticalAlignment="Top" Width="777"/>
+        <Label Content="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="1"/>
+        <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="2"/>
+        <Label Content="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="3"/>
+        <Label Content="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="4"/>
+        <Label Content="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="5"/>
+        <Label Content="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="6"/>
+        <Label Content="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="7"/>
+        <Label Content="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Row="8"/>
+        <Label Content="0" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="9"/>
+        <Label Content="1" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="9"/>
+        <Label Content="2" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="9"/>
+        <Label Content="3" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="9"/>
+        <Label Content="4" HorizontalContentAlignment="Center" Grid.Column="5" Grid.Row="9"/>
+        <Label Content="5" HorizontalContentAlignment="Center" Grid.Column="6" Grid.Row="9"/>
+        <Label Content="6" HorizontalContentAlignment="Center" Grid.Column="7" Grid.Row="9"/>
+        <Label Content="7" HorizontalContentAlignment="Center" Grid.Column="8" Grid.Row="9"/>
+    </Grid>
 </UserControl>

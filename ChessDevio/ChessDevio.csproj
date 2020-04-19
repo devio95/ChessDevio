@@ -128,35 +128,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\BishopGreenBlack.png" />
-    <Resource Include="Images\BishopGreenWhite.png" />
-    <Resource Include="Images\BishopRedBlack.png" />
-    <Resource Include="Images\BishopRedWhite.png" />
     <Resource Include="Images\Black.png" />
-    <Resource Include="Images\KingGreenBlack.png" />
-    <Resource Include="Images\KingGreenWhite.png" />
-    <Resource Include="Images\KingRedBlack.png" />
-    <Resource Include="Images\KingRedWhite.png" />
-    <Resource Include="Images\KnightGreenBlack.png" />
-    <Resource Include="Images\KnightGreenWhite.png" />
-    <Resource Include="Images\KnightRedBlack.png" />
-    <Resource Include="Images\KnightRedWhite.png" />
-    <Resource Include="Images\PawnGreenBlack.png" />
-    <Resource Include="Images\PawnGreenWhite.png" />
-    <Resource Include="Images\PawnRedBlack.png" />
-    <Resource Include="Images\PawnRedWhite.png" />
-    <Resource Include="Images\QueenGreenBlack.png" />
-    <Resource Include="Images\QueenGreenWhite.png" />
-    <Resource Include="Images\QueenRedBlack.png" />
-    <Resource Include="Images\QueenRedWhite.png" />
-    <Resource Include="Images\RookGreenBlack.png" />
-    <Resource Include="Images\RookGreenWhite.png" />
-    <Resource Include="Images\RookRedBlack.png" />
-    <Resource Include="Images\RookRedWhite.png" />
     <Resource Include="Images\White.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BishopGreen.png" />
+    <Resource Include="Images\BishopRed.png" />
+    <Resource Include="Images\KingGreen.png" />
+    <Resource Include="Images\KingRed.png" />
+    <Resource Include="Images\KnightGreen.png" />
+    <Resource Include="Images\KnightRed.png" />
+    <Resource Include="Images\PawnGreen.png" />
+    <Resource Include="Images\PawnRed.png" />
+    <Resource Include="Images\QueenGreen.png" />
+    <Resource Include="Images\QueenRed.png" />
+    <Resource Include="Images\RookGreen.png" />
+    <Resource Include="Images\RookRed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

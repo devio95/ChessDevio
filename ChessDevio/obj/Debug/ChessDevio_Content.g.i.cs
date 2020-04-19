@@ -8,6 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/knight.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bishopgreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bishopred.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/kinggreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/kingred.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/knightgreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/knightred.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pawngreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pawnred.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/queengreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/queenred.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/rookgreen.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/rookred.png")]
 
 
